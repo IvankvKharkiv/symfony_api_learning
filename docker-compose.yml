@@ -1,0 +1,37 @@
+version: "3.8"
+
+services: 
+    nginx:
+        build:
+            context: ./
+            dockerfile: docker/nginx.dockerfile
+        image: nginx
+        ports: 
+            - 8081:80
+        links:
+            - fpm
+        volumes: 
+            - ./app:/var/www/symfony_api_learning.com
+            - ./docker/xdebug.conf/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+        environment:
+            PHP_IDE_CONFIG: "serverName=symfony_api_learning.com"
+
+    fpm:
+        build:
+            context: ./
+            dockerfile: docker/fpm.dockerfile
+        volumes: 
+            - ./app:/var/www/symfony_api_learning.com
+            - ./docker/xdebug.conf/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+        environment:
+            PHP_IDE_CONFIG: "serverName=symfony_api_learning.com"
+        links: 
+            - mysql
+    mysql:
+        image: mysql
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DATABASE=importTest
+                
