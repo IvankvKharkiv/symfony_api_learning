@@ -237,3 +237,8 @@ fabric.properties
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+#tools like php-cs-fixer
+/app/tools
+/app/.php-cs-fixer.dist.php
+

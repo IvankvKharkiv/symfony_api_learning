@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repository;
 
 use App\Entity\ApiPlatformTest;
@@ -9,8 +11,8 @@ use Doctrine\Persistence\ManagerRegistry;
 /**
  * @method ApiPlatformTest|null find($id, $lockMode = null, $lockVersion = null)
  * @method ApiPlatformTest|null findOneBy(array $criteria, array $orderBy = null)
- * @method ApiPlatformTest[]    findAll()
- * @method ApiPlatformTest[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method ApiPlatformTest[] findAll()
+ * @method ApiPlatformTest[] findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class ApiPlatformTestRepository extends ServiceEntityRepository
 {

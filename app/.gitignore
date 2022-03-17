@@ -54,6 +54,9 @@ cmake-build-*/
 # File-based project format
 *.iws
 
+/keys
+
+
 # IntelliJ
 out/
 
