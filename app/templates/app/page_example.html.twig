@@ -1,0 +1,18 @@
+{% include 'base.html.twig' %}
+
+{% block body %}
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <h1>This is page Example</h1>
+    <br>
+
+    {% if app.user %}
+        <h1>Welcome, {{ app.user.username }} </h1>
+    {% else %}
+        <h1>Welcome, Stranger!</h1>
+    {% endif %}
+{% endblock %}

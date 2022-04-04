@@ -36,7 +36,7 @@ class AppFixtures extends Fixture
         $user = new User();
         $user->setEmail('sometestemail@gmail.com');
         $passwordEncoder = new MigratingPasswordHasher(new NativePasswordHasher());
-//        $argon2id$v=19$m=65536,t=4,p=1$GBVHgEhAIyUg9pkhQw5g4Q$/lQ4G5udeaTATiMhZXmbBodjYlnOlpvuQZKPDgfbbrY
+//        $argon2id$v=19$m=65536,t=4,p=1$GBVHgEhAIyUg9pkhQw5g4Q$/lQ4G5udeaTATiMh    ZXmbBodjYlnOlpvuQZKPDgfbbrY
         $user->setPassword($passwordEncoder->hash('123456789'));
         $user->setRoles(['ROLE_USER']);
 

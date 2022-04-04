@@ -1,0 +1,9 @@
+{% include 'base.html.twig' %}
+
+{% block body %}
+    {% if app.user %}
+        <h1>Welcome, {{ app.user.username }} </h1>
+    {% else %}
+        <h1>Welcome, Stranger!</h1>
+    {% endif %}
+{% endblock %}
