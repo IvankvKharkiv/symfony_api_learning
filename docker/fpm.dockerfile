@@ -6,7 +6,7 @@
 # RUN docker-php-ext-install mysqli
 
 
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 COPY composer /usr/local/bin
 

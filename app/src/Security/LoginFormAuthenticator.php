@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Security;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -41,7 +43,7 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             new PasswordCredentials($request->request->get('password', '')),
             [
                 new CsrfTokenBadge('authenticate', $request->request->get('_csrf_token')),
-                new RememberMeBadge()
+                new RememberMeBadge(),
             ]
         );
     }
@@ -52,14 +54,14 @@ class LoginFormAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        if($token->getUser()->isAdmin()){
+        if ($token->getUser()->isAdmin()) {
             return new RedirectResponse($this->urlGenerator->generate('app_admin_dashboard'));
         }
-        return new RedirectResponse($this->urlGenerator->generate('app_homepage'));
 
+        return new RedirectResponse($this->urlGenerator->generate('app_homepage'));
         // For example:
-        //return new RedirectResponse($this->urlGenerator->generate('some_route'));
-        throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        throw new \Exception('TODO: provide a valid redirect inside ' . __FILE__);
     }
 
     protected function getLoginUrl(Request $request): string
