@@ -3,7 +3,7 @@ league_oauth2_server:
 
     # Full path to the private key file.
     # How to generate a private key: https://oauth2.thephpleague.com/installation/#generating-public-and-private-keys
-    private_key:          keys/private.key
+    private_key:          /var/www/symfony_api_learning.com/keys/private.key
 
     # Passphrase of the private key, if any
     private_key_passphrase: null
@@ -17,7 +17,7 @@ league_oauth2_server:
 
     # How long the issued access token should be valid for.
     # The value should be a valid interval: http://php.net/manual/en/dateinterval.construct.php#refsect1-dateinterval.construct-parameters
-    access_token_ttl:     PT1H
+    access_token_ttl:     PT1M
 
     # How long the issued refresh token should be valid for.
     # The value should be a valid interval: http://php.net/manual/en/dateinterval.construct.php#refsect1-dateinterval.construct-parameters
@@ -49,7 +49,7 @@ league_oauth2_server:
 
     # Full path to the public key file
     # How to generate a public key: https://oauth2.thephpleague.com/installation/#generating-public-and-private-keys
-    public_key:           keys/public.key
+    public_key:           /var/www/symfony_api_learning.com/keys/public.key
 
   scopes:
     # Scopes that you wish to utilize in your application.
